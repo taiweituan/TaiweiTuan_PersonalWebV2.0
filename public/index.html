@@ -4,6 +4,7 @@
     <title></title>
 	<meta charset="utf-8" />
     <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="img/favicon.ico" rel='icon' type='image/ico'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
@@ -13,13 +14,16 @@
     <link href="css/ttuanStyle.css" rel="stylesheet" />
 </head>
 <body ng-app="mainApp" ng-controller="mainController as mainCtrl">
-    <div class="menu" ng-class="{active:active}">
+    <!-- mobile friendly menu -->
+    <div class="menu" ng-class="{active:active}" hide-gt-xs>
         <ul id="menu-list" ng-repeat="list in menuList">
-            <li>
+            <li ng-click="mainCtrl.closeMenu()">
                 <a ng-href="{{list.link}}">{{list.title}}</a>
             </li>
         </ul>
     </div>
+    <!-- !mobile friendly menu -->
+
     <md-content>
         <md-toolbar>
             <div class="md-toolbar-tools">
@@ -45,7 +49,7 @@
             </div>
         </md-toolbar>
     </md-content>
-    <div class="menu-bg-cover" ng-class="{active:active}" ng-click="mainCtrl.menuBtn()"></div>
+    <div class="menu-bg-cover" ng-class="{active:active}" ng-click="active = false" hide-gt-xs></div>
 
 
     <div ng-view></div>

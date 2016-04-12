@@ -79,6 +79,9 @@
     this.menuBtn = function () {
         $s.active = !$s.active;
     };
+    this.closeMenu = function () {
+        $s.active = false;
+    }
 }])
 
 .controller('homeController', ['$scope', 'Page', function ($scope, Page) {
