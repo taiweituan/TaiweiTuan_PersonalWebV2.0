@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <link href="img/favicon.ico" rel='icon' type='image/ico'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!--<link href="css/bootstrap.css" rel="stylesheet" />-->
+    <link href="css/MenuIcon.css" rel="stylesheet" />
+    <link href="css/ttuanStyle.css" rel="stylesheet" />
+</head>
+<body ng-app="mainApp" ng-controller="mainController as mainCtrl">
+    <div class="menu" ng-class="{active:active}">
+        <ul id="menu-list" ng-repeat="list in menuList">
+            <li>
+                <a ng-href="{{list.link}}">{{list.title}}</a>
+            </li>
+        </ul>
+    </div>
+    <md-content>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <span class="md-headline" ng-bind="title">Temp Header</span>
+                <span flex="" class="flex"></span>
+                <!-- normal top nav -->
+                <span class="" ng-repeat="list in menuList" hide-xs>
+                    <a class="tBtn tBtn-info" ng-href="{{list.link}}">{{list.title}}</a>
+                </span>
+
+                <!-- mobile top nav botton -->
+                <span class="" hide-gt-xs>
+                    <!--<md-button class="md-icon-button md-warn" aria-label="Menu">
+                        <md-icon aria-label="Menu" md-svg-icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg" ng-click="mainCtrl.menuBtn()"></md-icon>
+                    </md-button>-->
+                    <span class="menu-icon crossover" ng-click="mainCtrl.menuBtn()" ng-class="{active:active}">
+                        <span class="menu-icon-part"></span>
+                    </span>
+                    
+
+                </span>
+
+            </div>
+        </md-toolbar>
+    </md-content>
+    <div class="menu-bg-cover" ng-class="{active:active}" ng-click="mainCtrl.menuBtn()"></div>
+
+
+    <div ng-view></div>
+
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-route.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+    <script src="js/ttuanApp.js"></script>
+</body>
+</html>

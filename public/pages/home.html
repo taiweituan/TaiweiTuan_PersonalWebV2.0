@@ -1,0 +1,14 @@
+﻿<md-content class="container" >
+    <div class="home" id="home" ng-controller="homeController">
+
+        <img src="/img/profilePic.png" alt="" class="profilePic" style="height:220px;" />
+        <div class="sayMyName">Hi. This is Taiwei!</div>
+        <div class="socialMedias">
+            <span ng-repeat="icon in iconList">
+                <a class="fa fa-3x {{icon.icon}}" ng-href="http://{{icon.link}}">
+                    <!--<md-tooltip md-direction="bottom">{{icon.name}}</md-tooltip>-->
+                </a>
+            </span>
+        </div>
+    </div>
+</md-content>

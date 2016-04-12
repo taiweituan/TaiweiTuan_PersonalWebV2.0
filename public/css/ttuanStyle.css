@@ -1,0 +1,134 @@
+﻿body {
+    font-family: 'Roboto Slab', serif;
+}
+div.md-toolbar-tools{
+    height: 64px !important;
+    max-height:64px!important;
+}
+.tBtn{
+    display:inline-block;
+    padding:6px 12px;
+    margin: 0 6px;
+    margin-bottom:0;
+    font-size:16px;
+    font-weight:normal;
+    text-align:center;
+    vertical-align:middle;
+    cursor:pointer;
+    /*border:1px solid transparent;*/
+    border-radius:4px;
+}
+
+.tBtn.tBtn-info{
+    color:#fff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+}
+    .tBtn.tBtn-info:hover {
+        background-color: #46b8da;
+    }
+    .tBtn.tBtn-info:focus {
+        background-color: #46b8da;
+    }
+    .tBtn.tBtn-info:active {
+        background-color: #4a9dde;
+    }
+
+.container{
+    background:#1b84d7;
+    overflow-x:hidden;
+
+}
+
+.home{
+    max-width:800px;
+    min-width:440px;
+    text-align:center;
+    margin: 0 auto;
+    padding: 60px 20px 40px 20px;
+    min-height:100%;
+}
+
+.home .profilePic{
+    display:block;
+    margin:0 auto;
+    border-radius:10em;
+    border:1em solid #4a9dde;
+}
+
+.home .sayMyName{
+    color:white;
+    font-weight:700;
+    font-size:2.8em;
+    padding:30px 0;
+}
+
+.home .socialMedias a{
+    margin:10px 25px 30px 10px;
+    text-decoration:none;
+    text-align:center;
+}
+
+.menu{
+    display:inline-block;
+    position:absolute;
+    right:0;
+    top:64px;
+    width:200px;
+    /*height:500px;*/
+    height:0;
+    border:1px solid gray;
+    border-top:0;
+    border-right:0;
+    border-radius:0 0 0 1em;
+    background:white;
+    z-index:999;
+    opacity:0;
+    visibility:hidden;
+    transition:.2s ease; 
+}
+.menu.active{
+    opacity:.9;
+    height:230px;
+    visibility:visible;
+    z-index:999;
+    transition:.2s ease; 
+}
+
+div.menu-bg-cover{
+    background:none;
+    position:fixed;
+    width:100%;
+    height:100vh;
+    z-index:-3;
+}
+
+div.menu-bg-cover.active{
+    background:rgba(0, 0, 0, 0.75);
+    position:fixed;
+    width:100%;
+    height:100vh;
+    z-index:998;
+    transition:.4s ease; 
+}
+
+#menu-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+#menu-list li{
+    text-align:right;
+}
+
+    #menu-list li a {
+        display:block;
+        padding: 14px 30px 14px 0;
+        font-size:20px;
+        text-decoration:none;
+        color:black;
+    }
+    #menu-list li a:hover{
+        color:white;
+        background:#3884c1;
+    }
