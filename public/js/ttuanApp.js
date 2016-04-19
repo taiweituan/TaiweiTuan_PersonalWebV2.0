@@ -109,15 +109,15 @@
         name: 'Word Press',
         icon: 'fa-wordpress'
     }];
+    // re-adjust height to user's view
+	function reSize() {
+	    var windowHeight = window.innerHeight - 64 -100;
+	    //console.log(windowHeight);
+	    document.getElementById('home').style.height = windowHeight + 'px';
+	}
 }])
 
 .controller('resumeController', ['$scope', 'Page', function ($scope, Page) {
     console.log('resume controller loaded');
 }]);
 
-// re-adjust height to user's view
-function reSize() {
-    var windowHeight = window.innerHeight - 64 -100;
-    //console.log(windowHeight);
-    document.getElementById('home').style.height = windowHeight + 'px';
-}
