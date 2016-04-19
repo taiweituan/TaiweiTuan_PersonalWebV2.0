@@ -86,10 +86,10 @@
 
 .controller('homeController', ['$scope', 'Page', function ($scope, Page) {
     console.log('at home.html');
-
-    reSize();
+    $scope.reSize = reSize();
+    
     window.onresize = function (event) {
-        reSize();
+    	$scope.reSize = reSize();
     }
     $scope.helloworld = 'hello World!';
     $scope.iconList = [{
@@ -112,7 +112,7 @@
     // re-adjust height to user's view
 	function reSize() {
 	    var windowHeight = window.innerHeight - 64 -100;
-	    //console.log(windowHeight);
+	    // console.log(windowHeight);
 	    document.getElementById('home').style.height = windowHeight + 'px';
 	}
 }])
