@@ -16,7 +16,7 @@
 </head>
 <body ng-app="mainApp" ng-controller="mainController as mainCtrl">
     <!-- mobile friendly menu -->
-    <div class="menu" ng-class="{active:active}" hide-gt-xs>
+    <div class="menu" ng-class="{active:active}" hide-gt-1>
         <ul id="menu-list" ng-repeat="list in menuList">
             <li ng-click="mainCtrl.closeMenu()">
                 <a ng-href="{{list.link}}">{{list.title}}</a>
