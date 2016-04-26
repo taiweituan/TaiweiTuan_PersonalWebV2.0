@@ -9,7 +9,7 @@
 
         <form ng-submit="submitEmail(emailContent)" method="post" accept-charset="utf-8" class="sendEmail" name="emailForm">
             <div>
-                <md-input-container class="md-block" style="width:350px;">
+                <md-input-container class="md-block" style="max-width:350px;">
                     <label>Subject</label>
                     <input ng-model="emailContent.title" name="subject" required>
                 </md-input-container>
