@@ -2,6 +2,8 @@ var express = require('express');
 var nodemailer = require('nodemailer');
 var app = express();
 var PORT = process.env.PORT || 8080;
+var gmail = process.env.GMAIL_USERNAME || 'gmail';
+console.log(gmail);
 
 app.use(express.static(__dirname + '/public'));
 

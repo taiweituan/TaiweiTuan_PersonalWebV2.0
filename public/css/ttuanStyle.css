@@ -147,13 +147,28 @@ div.menu-bg-cover.active{
     }
 
 
-.resume {
+.resume, .contact {
     font-family: Roboto,"Helvetica Neue",sans-serif;
     text-align:left;
+    font-size: 1.1em;
     max-width:780px;
     min-width:300px;
     margin:0 auto;
+    box-sizing: border-box;
     /*background-color:#f2f2f2!important;*/
+}
+.resume{
+    padding-top: 30px;
+}
+
+.resume p, .resume li {
+    line-height: 1.5em;
+}
+.resume li{
+    padding-bottom: 10px;
+}
+.contact{
+    padding:80px;
 }
 
 h1.title{
@@ -185,4 +200,15 @@ h1.title{
 .work-duration{
     font-size:14px;
     color:gray;
+}
+
+form.sendEmail {
+    padding:20px;
+    border: gray solid 1px;
+    border-radius: .7em;
+    box-shadow:1px 1px 1px 1px gray;
+    box-sizing: border-box;
+}
+.error {
+    color:red;
 }

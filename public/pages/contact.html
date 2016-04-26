@@ -1,0 +1,50 @@
+<div class="contact" ng-controller="contactController">
+    <div flex layout-padding>
+        <span class="md-display-1">Hello Strangers!</span>
+        <p>
+            Have suggestions? Possibe imporvements? Questions? Or simply want to communicate?
+            <br><br>
+            I would love to hear from you!
+        </p>
+
+        <form ng-submit="submitEmail(emailContent)" method="post" accept-charset="utf-8" class="sendEmail" name="emailForm">
+            <div>
+                <md-input-container class="md-block" style="width:350px;">
+                    <label>Subject</label>
+                    <input ng-model="emailContent.title" name="subject" required>
+                </md-input-container>
+            </div>
+            <div>
+                <md-input-container class="md-block">
+                    <label>Message...</label>
+                    <textarea ng-model="emailContent.message" 
+                              md-maxlength="1000" 
+                              name="message"
+                              rows="12" 
+                              autofocus 
+                              md-select-on-focus
+                              ng-minlength="10"
+                              required>
+                    </textarea>
+                </md-input-container>
+                <p ng-show="submitted && emailForm.subject.$error.required" class="error">
+                    * Subject required.
+                </p>
+                <p ng-show="submitted && emailForm.message.$error.required" class="error">
+                    * Message required.
+                </p>
+                <p ng-show="submitted && emailForm.message.$error.minlength" class="error">
+                    * Message is too short.
+                </p>
+            </div>
+            <div style="padding-top: 20px;">
+                <md-button type="submit" 
+                           ng-click="submitted = true" 
+                           class="md-raised md-primary">
+                    Send
+                </md-button>
+            </div>
+        </form>
+    </div>
+    
+</div>
