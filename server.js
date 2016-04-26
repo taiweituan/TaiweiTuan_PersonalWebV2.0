@@ -3,8 +3,8 @@ var nodemailer = require('nodemailer');
 var bodyParser = require("body-parser");
 var app = express();
 var PORT = process.env.PORT || 8080;
-var gmailUsername = process.env.GMAIL_USERNAME || 'gmail';
-var gmailPassword = process.env.GMAIL_PASSWORD || 'password';
+var gmailUsername = process.env.GMAIL_USERNAME || 'test';
+var gmailPassword = process.env.GMAIL_PASSWORD || 'test@';
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.json());

@@ -7,7 +7,7 @@
             I would love to hear from you!
         </p>
 
-        <form ng-submit="submitEmail(emailContent)" method="post" accept-charset="utf-8" class="sendEmail" name="emailForm">
+        <form ng-submit="emailForm.$valid && submitEmail(emailContent)" novalidate method="post" accept-charset="utf-8" class="sendEmail" name="emailForm">
             <div>
                 <md-input-container class="md-block" style="max-width:350px;">
                     <label>Subject</label>
