@@ -174,7 +174,14 @@ div.menu-bg-cover.active{
     .contact {
         padding: 60px 10px 0 10px;
     }
+    .profolio_container .img_container img {
+        max-height:350px;
+        max-width: 95%;
+    }
+
 }
+
+
 h1.title{
     padding:5px 30px;
     border-radius:.4em;
@@ -237,6 +244,11 @@ form.sendEmail {
 .profolio_container{
     margin:14px 0;
 }
+
+.profolio_container ul.features{
+    line-height: 1.5em;
+}
+
 .profolio_container .tags li{
     display: inline-block;
     padding:6px 15px;
