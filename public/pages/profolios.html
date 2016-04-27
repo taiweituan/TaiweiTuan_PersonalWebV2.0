@@ -5,27 +5,37 @@
 		     class="profolio_container"
 		     ng-repeat="profolio in profolioData">
             <div flex-gt-xs="50">
-		    	<div class="md-headline">{{profolio.name}}</div>
+		    	<div class="md-headline" style="font-weight: bold; line-height: 2.4em;font-size: 1.4em">{{profolio.name}}</div>
 				<!-- profolio image here -->
 				<div class="img_container">
 					<img ng-src="{{profolio.src}}" alt="">
 				</div>
             </div>
-            <div flex-gt-xs="50" style="margin-top: 2em;">
+            <div flex-gt-xs="50" style="margin-top: 2em;" class="profolio_desciption">
 				<!-- description, tags, etcs here -->
-				<b>Features</b>
-				<ul>
-					<li ng-repeat="feature in profolio.features">
-						{{feature}}
-					</li>
-				</ul>
+				<div>
+					<b>Features</b>
+					<ul>
+						<li ng-repeat="feature in profolio.features">
+							{{feature}}
+						</li>
+					</ul>
+				</div>
 
-				<b>Tags</b>
-				<ul class="tags">
-					<li ng-repeat="tag in profolio.tags">
-						{{tag}}
-					</li>
-				</ul>
+				<div>
+					<b>Link</b>
+					<br>
+					<a ng-href="{{profolio.link}}">{{profolio.link}}</a>
+				</div>
+
+				<div>
+					<b>Tags</b>
+					<ul class="tags">
+						<li ng-repeat="tag in profolio.tags">
+							{{tag}}
+						</li>
+					</ul>
+				</div>
             </div>
         </div>
     </div>

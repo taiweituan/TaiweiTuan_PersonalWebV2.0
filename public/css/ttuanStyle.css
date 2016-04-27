@@ -222,7 +222,7 @@ form.sendEmail {
 }
 .profolio_container .img_container img {
     max-height:500px;
-    max-width: 100%;
+    max-width: 97%;
 }
 
 .profolio_container .img_container {
@@ -230,5 +230,27 @@ form.sendEmail {
 }
 
 .profolio_container .tags{
-    list-style: inline;
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+.profolio_container{
+    margin:14px 0;
+}
+.profolio_container .tags li{
+    display: inline-block;
+    padding:6px 15px;
+    margin: 5px 6px;
+    color:white;
+    background-color: #0288d1;
+    border-radius: 1em;
+}
+.profolio_container .profolio_desciption>div{
+    padding:10px;
+}
+
+.profolio_container .profolio_desciption>div a{
+    padding:14px 0;
+    color:#0091ea;
+    display: block;
 }
