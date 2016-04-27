@@ -27,22 +27,35 @@
                               required>
                     </textarea>
                 </md-input-container>
-                <p ng-show="submitted && emailForm.subject.$error.required" class="error">
+                <p ng-show="submitAttempted && emailForm.subject.$error.required" class="error">
                     * Subject required.
                 </p>
-                <p ng-show="submitted && emailForm.message.$error.required" class="error">
+                <p ng-show="submitAttempted && emailForm.message.$error.required" class="error">
                     * Message required.
                 </p>
-                <p ng-show="submitted && emailForm.message.$error.minlength" class="error">
+                <p ng-show="submitAttempted && emailForm.message.$error.minlength" class="error">
                     * Message is too short.
                 </p>
             </div>
             <div style="padding-top: 20px;">
+                <!-- Submit button -->
                 <md-button type="submit" 
-                           ng-click="submitted = true" 
+                           ng-show="!submitted"
+                           ng-click="submitAttempted = true"
                            class="md-raised md-primary">
-                    Send
+                    Submit
                 </md-button>
+
+                <!-- loading circle -->
+                <span ng-show="submitted && !submitSuccess">
+                    <md-progress-circular md-mode="indeterminate" class="md-hue-2" md-diameter="20px" style="margin-right: 30px;"></md-progress-circular> Submitting...
+                </span>
+
+                <!-- submit complete message -->
+                <span style="color:#01579b" 
+                      ng-show="submitSuccess && submitted">
+                    E-Mail sent! I will get back to you as soon as possible!
+                </span>
             </div>
         </form>
     </div>
