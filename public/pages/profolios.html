@@ -1,1 +1,32 @@
-﻿
+﻿<div class="profolio" ng-controller="profolioController">
+    <div flex layout-padding>
+		<div layout="column" 
+		     layout-gt-xs="row" 
+		     class="profolio_container"
+		     ng-repeat="profolio in profolioData">
+            <div flex-gt-xs="50">
+		    	<div class="md-headline">{{profolio.name}}</div>
+				<!-- profolio image here -->
+				<div class="img_container">
+					<img ng-src="{{profolio.src}}" alt="">
+				</div>
+            </div>
+            <div flex-gt-xs="50" style="margin-top: 2em;">
+				<!-- description, tags, etcs here -->
+				<b>Features</b>
+				<ul>
+					<li ng-repeat="feature in profolio.features">
+						{{feature}}
+					</li>
+				</ul>
+
+				<b>Tags</b>
+				<ul class="tags">
+					<li ng-repeat="tag in profolio.tags">
+						{{tag}}
+					</li>
+				</ul>
+            </div>
+        </div>
+    </div>
+</div>

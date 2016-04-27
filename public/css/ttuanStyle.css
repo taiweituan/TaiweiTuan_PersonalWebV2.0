@@ -147,7 +147,7 @@ div.menu-bg-cover.active{
     }
 
 
-.resume, .contact {
+.resume, .contact, .profolio {
     font-family: Roboto,"Helvetica Neue",sans-serif;
     text-align:left;
     font-size: 1.1em;
@@ -215,4 +215,20 @@ form.sendEmail {
 }
 .error {
     color:red;
+}
+
+.profolio_container{
+
+}
+.profolio_container .img_container img {
+    max-height:500px;
+    max-width: 100%;
+}
+
+.profolio_container .img_container {
+    text-align: center;
+}
+
+.profolio_container .tags{
+    list-style: inline;
 }
