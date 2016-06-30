@@ -46,7 +46,7 @@ div.md-toolbar-tools{
         padding-right:0 !important;
 
     }
-        .home .socialMedias a {
+        .home .profileLinks a {
             margin: 10px 13px 30px 13px !important;
         }
     
@@ -75,7 +75,8 @@ div.md-toolbar-tools{
     padding:20px 0;
 }
 
-.home .socialMedias a{
+.home .profileLinks a{
+    display: inline-block !important;
     margin:10px 25px 30px 10px;
     text-decoration:none;
     text-align:center;
