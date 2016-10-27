@@ -11,12 +11,16 @@
     });
 }])
 
-.factory('Page',['$http', function ($h) {
+.factory('Page', ['$http', function ($h) {
     var title = 'Taiwei Tuan';
     return {
-        title: function () { return title; },
-        setTitle: function (newTitle) { title = newTitle; },
-        sendEmail: function(emailContent){
+        title: function () {
+            return title;
+        },
+        setTitle: function (newTitle) {
+            title = newTitle;
+        },
+        sendEmail: function (emailContent) {
             console.log(JSON.stringify(emailContent));
             return $h.post("/sendEmail", JSON.stringify(emailContent));
         }
@@ -31,7 +35,7 @@
         // .backgroundPalette('white',{
         //     'default':'200'
         // });
-        ;
+    ;
 
     // ng-route
     $routeProvider.when('/', {
@@ -69,10 +73,6 @@
         title: 'Resume',
         name: 'Resume',
     }, {
-    //    link: '#/skills',
-    //    title: 'Skills',
-    //    name: 'Skills'
-    //}, {
         link: '#/profolios',
         title: 'Profolios',
         name: 'Profolios'
@@ -81,7 +81,7 @@
         title: 'Contact Me',
         name: 'Contact Me'
     }];
-    
+
     this.menuBtn = function () {
         $s.active = !$s.active;
     };
@@ -93,9 +93,9 @@
 .controller('homeController', ['$scope', 'Page', function ($scope, Page) {
     console.log('at home.html');
     $scope.reSize = reSize();
-    
+
     window.onresize = function (event) {
-    	$scope.reSize = reSize();
+        $scope.reSize = reSize();
     }
     $scope.helloworld = 'hello World!';
     $scope.iconList = [{
@@ -116,21 +116,21 @@
         icon: 'fa-wordpress'
     }];
     // re-adjust height to user's view
-	function reSize() {
-        if(!document.getElementById('home')){
+    function reSize() {
+        if (!document.getElementById('home')) {
             return;
         }
-	    var windowHeight = window.innerHeight - 64 -100;
-	    // console.log(windowHeight);
-	    document.getElementById('home').style.height = windowHeight + 'px';
-	}
+        var windowHeight = window.innerHeight - 64 - 100;
+        // console.log(windowHeight);
+        document.getElementById('home').style.height = windowHeight + 'px';
+    }
 }])
 
 .controller('resumeController', ['$scope', 'Page', function ($scope, Page) {
     console.log('resume controller loaded');
 }])
 
-.controller('contactController',['$scope', 'Page', '$http', function($s, Page, $h){
+.controller('contactController', ['$scope', 'Page', '$http', function ($s, Page, $h) {
     console.log('contact controller loaded');
     var emailContent = {
         'title': 'Hello Taiwei!',
@@ -140,13 +140,13 @@
     $s.submitted = false;
 
     //sending email using POST method
-    $s.submitEmail = function(email){
+    $s.submitEmail = function (email) {
         console.log('submitting email');
         $s.submitSuccess = false;
         $s.submitted = true;
 
         // sending email
-        Page.sendEmail(email).success(function(data){
+        Page.sendEmail(email).success(function (data) {
             $s.submitSuccess = true;
             console.log('Send Email success');
             console.log(data);
@@ -173,8 +173,8 @@
             'JSON',
             'Angular Mobile'
         ]
-    },{
-        name:'Leadertech Mobile Website',
+    }, {
+        name: 'Leadertech Mobile Website',
         src: 'img/LSI_Profolio.png',
         link: 'https://www.leadertechusa.com/',
         features: [
@@ -190,15 +190,51 @@
             'JSON',
             'ASP.NET'
         ]
-    },{
-        name:'Personal Website Ver.2',
+    }, {
+        name: 'Chat Room',
+        src: 'img/chatroom_site.png',
+        link: 'https://taiwei-chatroom.herokuapp.com',
+        features: [
+            'Send, receive messages with other people instantly.',
+            'Admin commands.'
+        ],
+        tags: [
+            'AngularJS',
+            'NodeJS',
+            'Bootstrap',
+            'Socket.IO',
+            'Express'
+        ]
+    }, {
+        name: 'To-Do List',
+        src: 'img/todo_site.png',
+        link: 'https://taiweituan-todo-v2.herokuapp.com',
+        features: [
+            'Add , remove, and modify your personalized to-do list.',
+            'Login authentication.',
+            'Safetly security your account with salt, json web token, and bcrypt.',
+            'ng-route provide instant page load.'
+        ],
+        tags: [
+            'AngularJS',
+            'NodeJS',
+            'Bootstrap',
+            'Salt',
+            'bcrypt',
+            'Authentication',
+            'SQL',
+            'Json Web Token',
+            'Express'
+        ]
+    }, {
+        name: 'Personal Website Ver.2',
         src: 'img/Personal_Website_Profolio_v2.png',
-        link: 'https://taiweituan.herokuapp.com/',
+        link: 'http://www.taiweituan.com',
         features: [
             'Heavely inspired by Material Design',
             'Mobile & Tablet Friendly',
             'Ability to send Email',
-            'ng-route provide faster page load'
+            'ng-route provide instant page load'
         ],
         tags: [
             'AngularJS',
@@ -206,8 +242,8 @@
             'NodeJS',
             'JSON'
         ]
-    },{
-        name:'Personal Website Ver.1',
+    }, {
+        name: 'Personal Website Ver.1',
         src: 'img/Personal_Website_Profolio_v1.png',
         link: 'https://taiweituan.github.io/',
         features: [
@@ -223,4 +259,3 @@
 
     $s.profolioData = profolioData;
 }]);
-

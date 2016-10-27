@@ -171,6 +171,7 @@ div.menu-bg-cover.active{
 .contact{
     padding:80px;
 }
+
 @media (max-width: 600px) {
     .contact {
         padding: 60px 10px 0 10px;
@@ -179,7 +180,6 @@ div.menu-bg-cover.active{
         max-height:350px;
         max-width: 95%;
     }
-
 }
 
 
@@ -263,4 +263,9 @@ form.sendEmail {
     padding:14px 0;
     color:#0091ea;
     display: block;
+}
+
+#here_logo{
+    width: 120px;
+    height: 120px;
 }
