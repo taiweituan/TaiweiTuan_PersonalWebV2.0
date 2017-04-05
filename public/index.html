@@ -1,10 +1,16 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
-    <title>Taiwei Tuan's Website</title>
-	<meta charset="utf-8" />
-    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="description" content="A website that brefely describes who Taiwei, the professional web developer is.">
+    <meta name="keywords" content="Taiwei, Tuan, Taiwei Tuan, html, Angularjs, javascript, developer, resume">
+    <meta name="author" content="Taiwei Tuan">
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    
+    <title>Taiwei Tuan's Website</title>
+
     <link href="img/favicon.ico" rel='icon' type='image/ico'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
@@ -14,6 +20,7 @@
     <link href="css/MenuIcon.css" rel="stylesheet" />
     <link href="css/ttuanStyle.css" rel="stylesheet" />
 </head>
+
 <body ng-app="mainApp" ng-controller="mainController as mainCtrl">
     <!-- mobile friendly menu -->
     <div class="menu" ng-class="{active:active}" hide-gt-1>
@@ -24,7 +31,6 @@
         </ul>
     </div>
     <!-- !mobile friendly menu -->
-
     <md-content>
         <md-toolbar>
             <div class="md-toolbar-tools">
@@ -34,7 +40,6 @@
                 <span class="" ng-repeat="list in menuList" hide-xs>
                     <a class="tBtn tBtn-info" ng-href="{{list.link}}">{{list.title}}</a>
                 </span>
-
                 <!-- mobile top nav botton -->
                 <span class="" hide-gt-xs>
                     <!--<md-button class="md-icon-button md-warn" aria-label="Menu">
@@ -42,37 +47,39 @@
                     </md-button>-->
                     <span class="menu-icon crossover" ng-click="mainCtrl.menuBtn()" ng-class="{active:active}">
                         <span class="menu-icon-part"></span>
-                    </span>
+                </span>
                 </span>
             </div>
         </md-toolbar>
-
     </md-content>
-    
     <div class="menu-bg-cover" ng-class="{active:active}" ng-click="active = false" hide-gt-xs></div>
-
     <div ng-view></div>
-
     <!-- Angular Material requires Angular.js Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-route.min.js"></script>
-
     <!-- Angular Material Library -->
     <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
     <script src="js/ttuanApp.js"></script>
-    
     <!-- Google Analytics -->
     <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
         ga('create', 'UA-86298987-1', 'auto');
         ga('send', 'pageview');
     </script>
 </body>
+
 </html>
