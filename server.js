@@ -1,10 +1,9 @@
 var express = require('express');
-var nodemailer = require('nodemailer');
+var helper = require('sendgrid').mail;
 var bodyParser = require("body-parser");
+var local_env_key = require('./local_env_var.js') || '';
 var app = express();
-var PORT = process.env.PORT || 8081;
-var emailUsername = process.env.EMAIL_USERNAME || 'test';
-var emailPassword = process.env.EMAIL_PASSWORD || 'tester';
+var PORT = process.env.PORT || 8888;
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.json());
@@ -21,44 +20,35 @@ app.listen(PORT, function () {
 app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
 
 // load the single view file (angular will handle the page changes on the front-end)
-app.get('*', function (req, res) {
+app.get('*', (req, res) => {
 	res.sendfile('./public/index.html');
 });
 
-
-app.post('/sendEmail', function (req, res) {
-	console.log(req.body);
-
-	// need to encrypt it somehow, pls send halp
-	var transporter = nodemailer.createTransport({
-		host: 'smtp.gmail.com',
-		port: 465,
-		secure: true, // use SSL
-		auth: {
-			user: emailUsername+'@gmail.com',
-			pass: emailPassword
-		}
+// SendGrid configuration 
+app.post('/sendEmail', (req, res) => {
+	var sg = require('sendgrid')(process.env.SENDGRID_API_KEY || local_env_key.sendGrid_API_key);
+	var from_email = new helper.Email('ttuan@no-reply.com');
+	var to_email = new helper.Email('taiweituan@gmail.com');
+	var subject = req.body.title;
+	var content = new helper.Content('text/plain', req.body.message);
+	var mail = new helper.Mail(from_email, subject, to_email, content);
+	var request = sg.emptyRequest({
+		method: 'POST',
+		path: '/v3/mail/send',
+		body: mail.toJSON(),
 	});
 
-	var mailOptions = {
-		from: '"NodeMailer" <nodemailer@no-reply.com>', // sender address
-		to: 'super496@hotmail.com, taiweituan@gmail.com', // list of receivers
-		subject: req.body.title, // Subject line
-		text: req.body.message // plaintext body
-	};
+	// Send mail
+	sg.API(request)
+		.then(response => {
+			console.log(response.statusCode);
+			console.log(response.body);
+			console.log(response.headers);
 
-	// send mail with defined transport object
-	transporter.sendMail(mailOptions, function (error, info) {
-		if (error) {
-			console.log("There was an error");
-			return console.log(error);
-		}
-		console.log('Message sent: ' + info.response);
+			return res.status(response.statusCode).send();
+		})
+		.catch(error => {
+			//The full response is attached to error.response
+			console.log(error.response.statusCode);
 	});
-
-	// Shut down the connection pool, no more messages. Comment this line out to continue sending emails.
-	transporter.close();
-
-	// return sent message 
-	res.json(mailOptions); // return success 
 });
