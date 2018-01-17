@@ -1,7 +1,9 @@
+// Hide the API keys.
+require('dotenv').config();
+
 var express = require('express');
 var helper = require('sendgrid').mail;
 var bodyParser = require("body-parser");
-var local_env_key = require('./local_env_var.js') || '';
 var app = express();
 var PORT = process.env.PORT || 8888;
 
@@ -26,7 +28,7 @@ app.get('*', (req, res) => {
 
 // SendGrid configuration 
 app.post('/sendEmail', (req, res) => {
-	var sg = require('sendgrid')(process.env.SENDGRID_API_KEY || local_env_key.sendGrid_API_key);
+	var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
 	var from_email = new helper.Email('ttuan@no-reply.com');
 	var to_email = new helper.Email('taiweituan@gmail.com');
 	var subject = req.body.title;

@@ -1,5 +1,4 @@
 node_modules/
 .DS_Store
 test.js
-local_env_var.js
-.jshintrc
+.env
