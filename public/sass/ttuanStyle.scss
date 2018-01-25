@@ -2,7 +2,7 @@ $color-primary: #1b84d7;
 $color-profilePic: #4a9dde;
 $color-primary-etc: #1b84d7;
 $color-primary-text: #fff;
-$colot-secondary: #5bc0de;
+$color-secondary: #5bc0de;
 $color-secondary-etc: #46b8da;
 $color-dark: #000;
 @media (max-width: 415px) {
@@ -31,7 +31,6 @@ $color-dark: #000;
 *::before {
     margin: 0;
     padding: 0;
-    box-sizing: inherit;
 }
 
 body {
@@ -235,6 +234,7 @@ h1.title {
 }
 
 form.sendEmail {
+    margin-top:30px;
     padding: 20px;
     border: gray solid 1px;
     border-radius: .7em;
@@ -248,21 +248,17 @@ form.sendEmail {
 
 .profolio_container {
     margin: 14px 0;
-
     .img_container {
         text-align: center;
-
         img {
             max-height: 500px;
             max-width: 97%;
         }
     }
-
     .tags {
         list-style: none;
         margin: 0;
         padding: 0;
-
         li {
             display: inline-block;
             padding: 6px 15px;
@@ -272,11 +268,10 @@ form.sendEmail {
             border-radius: 1em;
         }
     }
-
     ul.features {
         line-height: 1.5em;
     }
-    .profolio_desciption > div {
+    .profolio_desciption>div {
         padding: 10px;
         a {
             padding: 14px 0;

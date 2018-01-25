@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile:sass": "node-sass public/sass/ttuanStyle.scss public/css/testStyle.css -w",
-    "start": "node server.js"
+    "build-css": "node-sass --clude-path scss public/sass/ttuanStyle.scss public/css/ttuanNewStyle.css",
+    "start": "concurrently \"node server.js\" \"npm run build-css\" "
   },
   "author": "Taiwei Tuan",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.0",
+    "concurrently": "^3.5.1",
     "dotenv": "^4.0.0",
     "express": "^4.13.4",
     "sendgrid": "^5.2.3"
