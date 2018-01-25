@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile:sass": "node-sass public/sass/ttuanStyle.scss public/css/testStyle.css -w",
+    "start": "node server.js"
   },
   "author": "Taiwei Tuan",
   "license": "ISC",
@@ -13,5 +15,8 @@
     "dotenv": "^4.0.0",
     "express": "^4.13.4",
     "sendgrid": "^5.2.3"
+  },
+  "devDependencies": {
+    "node-sass": "^4.7.2"
   }
 }
